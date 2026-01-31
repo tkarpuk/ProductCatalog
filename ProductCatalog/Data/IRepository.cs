@@ -3,7 +3,7 @@
     public interface IRepository<T>
     {
         Task<List<T>> GetAllAsync();
-        Task<T> GetByIdAsync(int id);
+        Task<T?> GetByIdAsync(int id);
         Task<int> CreateAsync(T item);
         Task UpdateAsync(T item);
         Task DeleteAsync(int id);
