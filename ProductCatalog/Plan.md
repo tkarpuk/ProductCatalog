@@ -6,9 +6,15 @@
 2. Clean UI 
 3. Add `ProductController` + `View`
 4. Add `Product` model with DataAnnotations
+
+
+---- do it later!
 5. Add EF Core packages (SqlServer + Tools) and create `AppDbContext` + `DbSet<Product>`
 6. Add LocalDB connection string + register DbContext in `Program.cs`
 7. Create DB via migrations (`Add-Migration`, `Update-Database`)
+----
+
+5. For quick start - use IRepository + simple InMemory list
 
 ### B. CRUD controller
 
