@@ -4,10 +4,11 @@
 
 1. Create MVC project (.NET 8, no auth)
 2. Clean UI 
-3. Add `Product` model with DataAnnotations
-4. Add EF Core packages (SqlServer + Tools) and create `AppDbContext` + `DbSet<Product>`
-5. Add LocalDB connection string + register DbContext in `Program.cs`
-6. Create DB via migrations (`Add-Migration`, `Update-Database`)
+3. Add `ProductController` + `View`
+4. Add `Product` model with DataAnnotations
+5. Add EF Core packages (SqlServer + Tools) and create `AppDbContext` + `DbSet<Product>`
+6. Add LocalDB connection string + register DbContext in `Program.cs`
+7. Create DB via migrations (`Add-Migration`, `Update-Database`)
 
 ### B. CRUD controller
 
