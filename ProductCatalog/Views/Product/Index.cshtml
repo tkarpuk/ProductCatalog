@@ -1,5 +1,31 @@
-﻿@{
+﻿@model List<Product>
+
+@{
     ViewData["Title"] = "Products";
 }
 
 <h2>Products</h2>
+@{
+    var total = @Model.Count();
+}
+<p>total: @total products</p>
+
+<table class="table table-bordered border-start-0 border-end-0" style="width:80%;">
+    <thead class="table-light">
+        <tr>
+            <th>ID</th><th>Name</th><th>Category</th><th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var product in @Model)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Category</td>
+            <td>@product.Price.ToString("C")</td>
+        </tr>
+    }
+    </tbody>
+
+</table>
