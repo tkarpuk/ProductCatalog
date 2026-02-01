@@ -74,5 +74,23 @@ namespace ProductCatalog.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Product product)
+        {
+            if (!ModelState.IsValid)
+                return View(product);
+
+            await _repo.CreateAsync(product);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
