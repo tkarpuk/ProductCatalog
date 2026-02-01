@@ -1,8 +1,70 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">MVC CRUD Demo</h1>
-    <p class="lead">Simple Product Catalog using ASP.NET Core MVC + EF Core + LocalDB.</p>
+<div class="container mt-4">
+    <h1 class="mb-3">MVC Product Catalog Demo</h1>
+
+    <p class="lead">
+        This application demonstrates a classic ASP.NET Core MVC CRUD workflow
+        with validation, error handling, and clean navigation.
+    </p>
+
+    <hr />
+
+    <h4>A. Check main functionality (CRUD)</h4>
+    <p>
+        Open the Products section to view, create, edit, and delete products.
+    </p>
+    <a asp-controller="Product" asp-action="Index">
+        Go to Products
+    </a>
+
+    <hr />
+
+    <h4>B. Check validation</h4>
+    <p>
+        Validation is implemented using model attributes and server-side checks.
+        Try creating or editing a product with invalid data:
+    </p>
+    <ul>
+        <li>Leave <strong>Name</strong> empty</li>
+        <li>Enter a negative or zero <strong>Price</strong></li>
+    </ul>
+    <p>
+        Validation errors will be displayed directly in the form.
+    </p>
+    <a asp-controller="Product" asp-action="Create">
+        Try Create with invalid data
+    </a>
+
+    <hr />
+
+    <h4>C. Check error handling</h4>
+    <p>
+        The application uses centralized error handling with custom error pages.
+        You can test it using the following links:
+    </p>
+    <ul>
+        <li>
+            <a asp-controller="Product" asp-action="Details" asp-route-id="9999">
+                Product not found (404)
+            </a>
+        </li>
+        <li>
+            <a asp-controller="Product" asp-action="Edit" asp-route-id="0">
+                Invalid request (400)
+            </a>
+        </li>
+        <li>
+            <a href="/some-random-page">
+                Unknown page (404)
+            </a>
+        </li>
+    </ul>
+
+    <p>
+        All errors are handled via <code>/Error/{code}</code> with dedicated views.
+    </p>
 </div>
+
