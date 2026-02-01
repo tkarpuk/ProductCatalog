@@ -13,7 +13,7 @@
 <table class="table table-bordered border-start-0 border-end-0" style="width:80%;">
     <thead class="table-light">
         <tr>
-            <th>ID</th><th>Name</th><th>Category</th><th>Price</th>
+            <th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +24,9 @@
             <td>@product.Name</td>
             <td>@product.Category</td>
             <td>@product.Price.ToString("C")</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@product.Id">Details</a>
+            </td>
         </tr>
     }
     </tbody>

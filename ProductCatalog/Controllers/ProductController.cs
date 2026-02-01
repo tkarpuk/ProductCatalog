@@ -18,5 +18,16 @@ namespace ProductCatalog.Controllers
             var products = await _repo.GetAllAsync();
             return View(products);
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+
+            var product = await _repo.GetByIdAsync(id);
+            return product is null 
+                ? NotFound() 
+                : View(product);
+        }
     }
 }
