@@ -14,8 +14,6 @@ namespace ProductCatalog.Data
 
         public Task<List<Product>> GetAllAsync() => Task.FromResult(_products.ToList());
 
-        public Task<bool> ExistsAsync(int id) => Task.FromResult(_products.Any(p => p.Id == id));
-
         public Task<Product?> GetByIdAsync(int id) => Task.FromResult(_products.FirstOrDefault(p => p.Id == id));
 
         public Task<int> CreateAsync(Product item)
