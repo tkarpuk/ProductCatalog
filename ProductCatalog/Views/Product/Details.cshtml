@@ -6,18 +6,18 @@
 
 <h2>Product Details</h2>
 
-<dl>
-    <dt>Id</dt>
-    <dd>@Model.Id</dd>
+<dl class="row w-50">
+    <dt class="col-sm-3">Id</dt>
+    <dd class="col-sm-9">@Model.Id</dd>
 
-    <dt>Name</dt>
-    <dd>@Model.Name</dd>
+    <dt class="col-sm-3">Name</dt>
+    <dd class="col-sm-9">@Model.Name</dd>
 
-    <dt>Category</dt>
-    <dd>@Model.Category</dd>
+    <dt class="col-sm-3">Category</dt>
+    <dd class="col-sm-9">@Model.Category</dd>
 
-    <dt>Price</dt>
-    <dd>@Model.Price.ToString("C")</dd>
+    <dt class="col-sm-3">Price</dt>
+    <dd class="col-sm-9">@Model.Price.ToString("C")</dd>
 </dl>
 
 <a asp-action="Index">Back to list</a>
