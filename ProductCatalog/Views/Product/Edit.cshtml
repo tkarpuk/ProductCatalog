@@ -12,14 +12,17 @@
     <p>
         <label asp-for="@Model.Name" class="form-label"></label>
         <input asp-for="@Model.Name" class="form-control" />
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
     </p>
     <p>
         <label asp-for="@Model.Category" class="form-label"></label>
         <input asp-for="@Model.Category" class="form-control" />
+        <span asp-validation-for="@Model.Category" class="text-danger"></span>
     </p>
     <p>
         <label asp-for="@Model.Price" class="form-label"></label>
         <input asp-for="@Model.Price" class="form-control" />
+        <span asp-validation-for="@Model.Price" class="text-danger"></span>
     </p>
     <button type="submit" class="btn btn-primary">Save</button>
     <a asp-action="Index">Cancel and back to list</a>

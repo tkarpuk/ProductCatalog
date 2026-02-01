@@ -67,6 +67,9 @@ namespace ProductCatalog.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Product product)
         {
+            if (!ModelState.IsValid)
+                return View(product);
+
             await _repo.UpdateAsync(product);
 
             return RedirectToAction(nameof(Index));
