@@ -29,5 +29,26 @@ namespace ProductCatalog.Controllers
                 ? NotFound() 
                 : View(product);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+
+            var product = await _repo.GetByIdAsync(id);
+            return product is null
+                ? NotFound()
+                : View(product);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await _repo.DeleteAsync(id);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
