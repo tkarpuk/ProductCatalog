@@ -1,0 +1,23 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Product Details</h2>
+
+<dl>
+    <dt>Id</dt>
+    <dd>@Model.Id</dd>
+
+    <dt>Name</dt>
+    <dd>@Model.Name</dd>
+
+    <dt>Category</dt>
+    <dd>@Model.Category</dd>
+
+    <dt>Price</dt>
+    <dd>@Model.Price.ToString("C")</dd>
+</dl>
+
+<a asp-action="Index">Back to list</a>
