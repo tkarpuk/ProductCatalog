@@ -13,6 +13,8 @@ builder.Services.AddSingleton<IRepository<Product>, InMemoryRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseStatusCodePagesWithReExecute("/Error/{0}");
+
 app.UseStaticFiles();
 
 app.UseRouting();
