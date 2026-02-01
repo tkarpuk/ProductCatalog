@@ -50,5 +50,26 @@ namespace ProductCatalog.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+
+            var product = await _repo.GetByIdAsync(id);
+            return product is null
+                ? NotFound()
+                : View(product);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Product product)
+        {
+            await _repo.UpdateAsync(product);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
